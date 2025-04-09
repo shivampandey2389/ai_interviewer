@@ -226,5 +226,5 @@ export const dummyInterviews: Interview[] = [
     questions: ["What is Node.js?"],
     finalized: false,
     createdAt: "2024-03-14T15:30:00Z",
-  },
+  }
 ];
