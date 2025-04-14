@@ -1,7 +1,7 @@
 import InterviewCard from "@/components/InterviewCard";
 import { Button } from "@/components/ui/button";
-import { dummyInterviews } from "@/constants";
-import { getCurrentUser, getInterviewsByUserId, getLatestInterviews } from "@/lib/actions/auth.action";
+import { getCurrentUser} from "@/lib/actions/auth.action";
+import {getInterviewsByUserId, getLatestInterviews } from "@/lib/actions/general.action"
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,8 +11,8 @@ const Page = async() =>{
     await getInterviewsByUserId(user?.id!),
     await getLatestInterviews({userId:user?.id!})
   ])
-  const hasPastInterview = userInterview?.length > 0;
-  const hasUpcomingInterview = latestInterview?.length >0;
+  const hasPastInterview = userInterview?.length! > 0;
+  const hasUpcomingInterview = latestInterview?.length! >0;
   return(
     <>
     <section className="card-cta">
